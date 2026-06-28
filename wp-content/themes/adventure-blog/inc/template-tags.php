@@ -25,7 +25,7 @@ function adventure_blog_format_post_date( $post_id = null ) {
  * @return string
  */
 function adventure_blog_get_home_about_image() {
-	$default = 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=900&h=900&q=80';
+	$default = get_template_directory_uri() . '/assets/images/home-about-author.png';
 	$image   = get_theme_mod( 'adventure_home_about_image', '' );
 
 	if ( $image ) {

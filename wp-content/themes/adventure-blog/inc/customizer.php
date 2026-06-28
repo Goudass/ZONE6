@@ -112,7 +112,7 @@ function adventure_blog_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'adventure_home_about_image',
 		array(
-			'default'           => 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=900&h=900&q=80',
+			'default'           => get_template_directory_uri() . '/assets/images/home-about-author.png',
 			'sanitize_callback' => 'esc_url_raw',
 		)
 	);

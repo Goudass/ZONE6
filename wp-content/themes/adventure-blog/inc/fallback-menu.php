@@ -5,7 +5,7 @@
 function adventure_blog_fallback_menu() {
 	$items = array(
 		home_url( '/o-mnie/' )         => __( 'O mnie', 'adventure-blog' ),
-		home_url( '/aktualnosci/' )    => __( 'Aktualności', 'adventure-blog' ),
+		adventure_blog_get_aktualnosci_link() => __( 'Aktualności', 'adventure-blog' ),
 		adventure_blog_get_news_category_link( 'trasy-rowerowe' ) => __( 'Trasy rowerowe', 'adventure-blog' ),
 		adventure_blog_get_news_category_link( 'tatry' ) => __( 'Tatry', 'adventure-blog' ),
 		home_url( '/typ-trasy/projekty/' ) => __( 'Projekty', 'adventure-blog' ),

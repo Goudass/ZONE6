@@ -100,3 +100,18 @@ function adventure_blog_get_news_category_link( $slug ) {
 
 	return ( $term instanceof WP_Term && ! is_wp_error( $term ) ) ? get_term_link( $term ) : home_url( '/' );
 }
+
+/**
+ * Permalink for the Aktualności archive page.
+ *
+ * @return string
+ */
+function adventure_blog_get_aktualnosci_link() {
+	$posts_page_id = (int) get_option( 'page_for_posts' );
+
+	if ( $posts_page_id ) {
+		return get_permalink( $posts_page_id );
+	}
+
+	return home_url( '/aktualnosci/' );
+}
