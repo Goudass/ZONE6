@@ -6,7 +6,10 @@
  */
 
 get_header();
+?>
 
+<div class="archive-page section--surface section--band-a">
+<?php
 if ( adventure_blog_uses_archive_hero() ) {
 	get_template_part( 'template-parts/archive', 'hero', adventure_blog_get_archive_hero_data() );
 } else {
@@ -23,7 +26,7 @@ if ( adventure_blog_uses_archive_hero() ) {
 }
 ?>
 
-<section class="section section--band-b section--archive reveal">
+<section class="section section--archive reveal">
 	<div class="container">
 		<?php if ( have_posts() ) : ?>
 			<div class="<?php echo adventure_blog_archive_uses_route_grid() ? 'route-grid' : 'news-grid'; ?>">
@@ -46,6 +49,7 @@ if ( adventure_blog_uses_archive_hero() ) {
 		<?php endif; ?>
 	</div>
 </section>
+</div>
 
 <?php
 get_footer();

@@ -40,7 +40,7 @@ $news_sections = array(
 );
 ?>
 
-<section class="section section--home-body section--band-a section--about">
+<section class="section section--home-body section--surface section--band-a section--about">
 	<?php get_template_part( 'template-parts/home', 'about' ); ?>
 
 	<div class="home-news">

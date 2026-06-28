@@ -25,8 +25,14 @@ while ( have_posts() ) :
 			<?php
 		endif;
 	elseif ( 'kontakt' === $slug ) :
-		get_template_part( 'template-parts/archive', 'hero', adventure_blog_get_page_hero_data( $slug ) );
-		get_template_part( 'template-parts/contact', 'page' );
+		?>
+		<div class="contact-page section--surface section--band-a">
+			<?php
+			get_template_part( 'template-parts/archive', 'hero', adventure_blog_get_page_hero_data( $slug ) );
+			get_template_part( 'template-parts/contact', 'page' );
+			?>
+		</div>
+		<?php
 	else :
 		?>
 	<section class="page-header reveal">

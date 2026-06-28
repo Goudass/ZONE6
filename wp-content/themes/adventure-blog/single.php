@@ -27,13 +27,15 @@ while ( have_posts() ) :
 			</div>
 		</section>
 
-		<div class="container post-single__body reveal">
-			<div class="post-content">
-				<?php the_content(); ?>
+		<div class="post-single__surface section section--surface section--band-a">
+			<div class="container post-single__body reveal">
+				<div class="post-content">
+					<?php the_content(); ?>
+				</div>
 			</div>
-		</div>
 
-		<?php get_template_part( 'template-parts/content', 'gallery' ); ?>
+			<?php get_template_part( 'template-parts/content', 'gallery' ); ?>
+		</div>
 	</article>
 	<?php
 endwhile;
