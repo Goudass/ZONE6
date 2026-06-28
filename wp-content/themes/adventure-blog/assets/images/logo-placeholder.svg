@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo placeholder">
+  <rect width="120" height="120" fill="#373D2E"/>
+  <path d="M30 78 L60 34 L90 78 Z" fill="none" stroke="#D1D2D3" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="60" cy="82" r="18" fill="none" stroke="#D1D2D3" stroke-width="5"/>
+  <circle cx="60" cy="82" r="4" fill="#D1D2D3"/>
+</svg>

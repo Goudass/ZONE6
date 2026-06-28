@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Adventure Blog Sample" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Przykładowa trasa tatrzańska</name>
+    <desc>Sample GPX for theme demo</desc>
+  </metadata>
+  <trk>
+    <name>Przykładowa trasa</name>
+    <trkseg>
+      <trkpt lat="49.2500" lon="19.9500"><ele>1350</ele></trkpt>
+      <trkpt lat="49.2515" lon="19.9525"><ele>1385</ele></trkpt>
+      <trkpt lat="49.2530" lon="19.9550"><ele>1420</ele></trkpt>
+      <trkpt lat="49.2545" lon="19.9575"><ele>1475</ele></trkpt>
+      <trkpt lat="49.2560" lon="19.9600"><ele>1520</ele></trkpt>
+      <trkpt lat="49.2575" lon="19.9625"><ele>1565</ele></trkpt>
+      <trkpt lat="49.2590" lon="19.9650"><ele>1605</ele></trkpt>
+      <trkpt lat="49.2605" lon="19.9675"><ele>1640</ele></trkpt>
+      <trkpt lat="49.2620" lon="19.9700"><ele>1675</ele></trkpt>
+      <trkpt lat="49.2635" lon="19.9725"><ele>1705</ele></trkpt>
+      <trkpt lat="49.2650" lon="19.9750"><ele>1735</ele></trkpt>
+      <trkpt lat="49.2665" lon="19.9775"><ele>1760</ele></trkpt>
+      <trkpt lat="49.2680" lon="19.9800"><ele>1785</ele></trkpt>
+      <trkpt lat="49.2695" lon="19.9825"><ele>1805</ele></trkpt>
+      <trkpt lat="49.2710" lon="19.9850"><ele>1820</ele></trkpt>
+      <trkpt lat="49.2725" lon="19.9875"><ele>1835</ele></trkpt>
+      <trkpt lat="49.2740" lon="19.9900"><ele>1845</ele></trkpt>
+      <trkpt lat="49.2755" lon="19.9925"><ele>1850</ele></trkpt>
+      <trkpt lat="49.2770" lon="19.9950"><ele>1840</ele></trkpt>
+      <trkpt lat="49.2785" lon="19.9975"><ele>1820</ele></trkpt>
+      <trkpt lat="49.2800" lon="20.0000"><ele>1790</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
