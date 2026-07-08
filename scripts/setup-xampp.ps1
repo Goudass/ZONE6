@@ -115,7 +115,7 @@ if (-not $installed) {
     Invoke-WpCli @(
         "core", "install",
         "--url=$SiteUrl",
-        "--title=ZONE6.PL",
+        "--title=Strefa6",
         "--admin_user=$AdminUser",
         "--admin_password=$AdminPass",
         "--admin_email=$AdminMail",

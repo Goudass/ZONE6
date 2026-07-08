@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'ADVENTURE_BLOG_VERSION', '1.6.0' );
 define( 'ADVENTURE_BLOG_DIR', get_template_directory() );
 define( 'ADVENTURE_BLOG_URI', get_template_directory_uri() );
-define( 'ADVENTURE_BLOG_SITE_NAME', 'ZONE6.PL' );
+define( 'ADVENTURE_BLOG_SITE_NAME', 'Strefa6.pl' );
 define( 'ADVENTURE_BLOG_SITE_URL', 'https://www.6zone.pl' );
 
 require_once ADVENTURE_BLOG_DIR . '/inc/cpt-trasa.php';
@@ -38,6 +38,77 @@ function adventure_blog_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'adventure_blog_body_classes' );
+
+/**
+ * Ensure browser tab title uses current brand name.
+ *
+ * @param array $parts Title parts.
+ * @return array
+ */
+function adventure_blog_document_title_parts( $parts ) {
+	if ( ! is_array( $parts ) ) {
+		return $parts;
+	}
+
+	$parts['site'] = ADVENTURE_BLOG_SITE_NAME;
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'adventure_blog_document_title_parts' );
+
+/**
+ * Normalize legacy brand strings in frontend text.
+ *
+ * @param string $value Input text.
+ * @return string
+ */
+function adventure_blog_normalize_brand_text( $value ) {
+	if ( ! is_string( $value ) || '' === $value ) {
+		return $value;
+	}
+
+	$replacements = array(
+		'ZONE6.PL'                               => ADVENTURE_BLOG_SITE_NAME,
+		'ZONE6'                                  => 'Strefa6',
+		'6ZONE.PL'                               => ADVENTURE_BLOG_SITE_NAME,
+		'6ZONE'                                  => 'Strefa6',
+		'zone6.pl'                               => strtolower( ADVENTURE_BLOG_SITE_NAME ),
+		'zone6'                                  => 'strefa6',
+		'6zone.pl'                               => strtolower( ADVENTURE_BLOG_SITE_NAME ),
+		'6zone'                                  => 'strefa6',
+		'Outdoor, trasy i przygody - 6zone.pl'   => 'Outdoor, trasy i przygody - Strefa6',
+		'Outdoor, trasy i przygody — 6zone.pl'   => 'Outdoor, trasy i przygody — Strefa6',
+	);
+
+	return strtr( $value, $replacements );
+}
+
+/**
+ * Normalize title shown in browser tab.
+ *
+ * @param string $title Full document title.
+ * @return string
+ */
+function adventure_blog_pre_get_document_title( $title ) {
+	return adventure_blog_normalize_brand_text( $title );
+}
+add_filter( 'pre_get_document_title', 'adventure_blog_pre_get_document_title', 99 );
+
+/**
+ * Normalize bloginfo output for name/description.
+ *
+ * @param string $value Bloginfo value.
+ * @param string $show  Requested field.
+ * @return string
+ */
+function adventure_blog_bloginfo_filter( $value, $show ) {
+	if ( in_array( $show, array( 'name', 'description' ), true ) ) {
+		return adventure_blog_normalize_brand_text( $value );
+	}
+
+	return $value;
+}
+add_filter( 'bloginfo', 'adventure_blog_bloginfo_filter', 20, 2 );
 
 /**
  * Theme setup.

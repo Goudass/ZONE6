@@ -18,7 +18,7 @@ function adventure_blog_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'adventure_blog_branding',
 		array(
-			'title'    => __( 'ZONE6.PL — branding', 'adventure-blog' ),
+			'title'    => __( 'Strefa6 — branding', 'adventure-blog' ),
 			'priority' => 30,
 		)
 	);
@@ -230,7 +230,7 @@ function adventure_blog_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'adventure_instagram_handle',
 		array(
-			'default'           => 'ZONE6',
+			'default'           => 'strefa6',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -239,7 +239,7 @@ function adventure_blog_customize_register( $wp_customize ) {
 		'adventure_instagram_handle',
 		array(
 			'label'       => __( 'Instagram — nazwa wyświetlana', 'adventure-blog' ),
-			'description' => __( 'Np. ZONE6 — widoczna w stopce obok ikony.', 'adventure-blog' ),
+			'description' => __( 'Np. strefa6 — widoczna w stopce obok ikony.', 'adventure-blog' ),
 			'section'     => 'adventure_blog_branding',
 			'type'        => 'text',
 		)
@@ -299,7 +299,7 @@ function adventure_blog_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'adventure_contact_display_email',
 		array(
-			'default'           => 'kontakt@6zone.pl',
+			'default'           => 'kontakt@strefa6.pl',
 			'sanitize_callback' => 'sanitize_email',
 		)
 	);
@@ -368,7 +368,7 @@ function adventure_blog_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'adventure_footer_tagline',
 		array(
-			'default'           => 'Outdoor, trasy i przygody — 6zone.pl',
+			'default'           => 'Outdoor, trasy i przygody — Strefa6',
 			'sanitize_callback' => 'sanitize_textarea_field',
 		)
 	);
@@ -411,6 +411,22 @@ function adventure_blog_get_name() {
 	$name = get_theme_mod( 'adventure_blog_name', ADVENTURE_BLOG_SITE_NAME );
 
 	if ( $name ) {
+		$legacy_names = array(
+			'ZONE6.PL',
+			'ZONE6',
+			'6ZONE.PL',
+			'6ZONE',
+			'Strefa6',
+			'strefa6',
+			'zone6.pl',
+			'zone6',
+			'6zone.pl',
+			'6zone',
+		);
+		if ( in_array( trim( $name ), $legacy_names, true ) ) {
+			return ADVENTURE_BLOG_SITE_NAME;
+		}
+
 		return $name;
 	}
 

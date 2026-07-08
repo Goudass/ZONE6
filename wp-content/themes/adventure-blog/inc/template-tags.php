@@ -679,9 +679,12 @@ function adventure_blog_social_links() {
  * @return array{phone: string, address: string, email: string, map_lat: string, map_lng: string, map_label: string}
  */
 function adventure_blog_get_contact_details() {
-	$email = get_theme_mod( 'adventure_contact_display_email', 'kontakt@6zone.pl' );
+	$email = get_theme_mod( 'adventure_contact_display_email', 'kontakt@strefa6.pl' );
 	if ( ! $email ) {
 		$email = get_theme_mod( 'adventure_contact_email', get_option( 'admin_email' ) );
+	}
+	if ( in_array( trim( strtolower( $email ) ), array( 'kontakt@6zone.pl', 'kontakt@zone6.pl' ), true ) ) {
+		$email = 'kontakt@strefa6.pl';
 	}
 
 	return array(
@@ -720,7 +723,7 @@ function adventure_blog_render_contact_icon( $name ) {
 function adventure_blog_render_footer_contact() {
 	$details   = adventure_blog_get_contact_details();
 	$instagram = get_theme_mod( 'adventure_instagram_url', 'https://www.instagram.com/zone6' );
-	$insta_label = get_theme_mod( 'adventure_instagram_handle', 'ZONE6' );
+	$insta_label = get_theme_mod( 'adventure_instagram_handle', 'strefa6' );
 	$has_contact = $details['email'] || ( $instagram && $insta_label );
 
 	if ( ! $has_contact ) {
@@ -762,19 +765,13 @@ function adventure_blog_render_brand( $class_prefix = 'site-brand' ) {
 	$home = home_url( '/' );
 	?>
 	<a class="<?php echo esc_attr( $class_prefix ); ?>" href="<?php echo esc_url( $home ); ?>">
-		<?php if ( has_custom_logo() ) : ?>
-			<span class="<?php echo esc_attr( $class_prefix ); ?>__logo-wrap">
-				<?php the_custom_logo(); ?>
-			</span>
-		<?php else : ?>
-			<img
-				src="<?php echo esc_url( ADVENTURE_BLOG_URI . '/assets/images/logo-white.png?v=3' ); ?>"
-				alt="<?php echo esc_attr( $name ); ?>"
-				class="<?php echo esc_attr( $class_prefix ); ?>__logo"
-				width="170"
-				height="44"
-			>
-		<?php endif; ?>
+		<img
+			src="<?php echo esc_url( ADVENTURE_BLOG_URI . '/assets/images/logo-white.png?v=4' ); ?>"
+			alt="<?php echo esc_attr( $name ); ?>"
+			class="<?php echo esc_attr( $class_prefix ); ?>__logo"
+			width="170"
+			height="44"
+		>
 	</a>
 	<?php
 }

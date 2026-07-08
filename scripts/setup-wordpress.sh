@@ -10,7 +10,7 @@ if [ -f .env ]; then
 fi
 
 WP_URL="${WP_URL:-http://localhost:8080}"
-WP_TITLE="${WP_TITLE:-ZONE6.PL}"
+WP_TITLE="${WP_TITLE:-Strefa6}"
 WP_ADMIN_USER="${WP_ADMIN_USER:-admin}"
 WP_ADMIN_PASSWORD="${WP_ADMIN_PASSWORD:-admin123}"
 WP_ADMIN_EMAIL="${WP_ADMIN_EMAIL:-admin@example.com}"

@@ -7,7 +7,7 @@
 
 $details       = adventure_blog_get_contact_details();
 $instagram     = get_theme_mod( 'adventure_instagram_url', 'https://www.instagram.com/zone6' );
-$insta_label   = get_theme_mod( 'adventure_instagram_handle', 'ZONE6' );
+$insta_label   = get_theme_mod( 'adventure_instagram_handle', 'strefa6' );
 $insta_display = $insta_label ? '@' . ltrim( $insta_label, '@' ) : __( 'Instagram', 'adventure-blog' );
 ?>
 <div class="contact-page__body">

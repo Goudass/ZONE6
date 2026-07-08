@@ -27,7 +27,7 @@ while ( have_posts() ) :
 			<div class="container route-hero__content">
 				<?php adventure_blog_difficulty_badge( $meta['trudnosc'] ); ?>
 				<h1 class="route-hero__title"><?php the_title(); ?></h1>
-				<?php adventure_blog_route_stats_compact( $meta ); ?>
+				<?php adventure_blog_route_stats( $meta ); ?>
 			</div>
 		</section>
 
